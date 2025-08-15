@@ -4,7 +4,7 @@ This is a simple, attractive, and interactive web-based temperature converter th
 ✨ Features
 Intuitive Interface: Easy-to-use design with clear input fields and unit selectors.
 
-Three Units Supported: Convert between Celsius (^\\circ C), Fahrenheit (^\\circ F), and Kelvin (K).
+Three Units Supported: Convert between Celsius (C), Fahrenheit (F), and Kelvin (K).
 
 Real-time Conversion: Get instant results as you input values or change units.
 
