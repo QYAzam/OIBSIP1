@@ -19,8 +19,7 @@ Newsletter Signup – Simple subscription form.
 
 Custom Scrollbar – Sleek and minimal scroll styling.
 
-📂 Project Structure
-index.html   # Main HTML file
+📂 Project Structure:   index.html   # Main HTML file
 
 🛠️ Technologies Used
 
@@ -30,7 +29,7 @@ Tailwind CSS (via CDN)
 
 Google Fonts – Inter
 
-Unsplash Images
+Google Images
 
 📦 How to Use
 
@@ -47,5 +46,3 @@ Replace image URLs with your own product images.
 Update colors and typography in Tailwind classes.
 
 Add more product cards to expand the collection.
-
-📜 License
