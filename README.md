@@ -5,7 +5,6 @@ It showcases my skills, projects, and contact information.
 
 ## 📌 Features
 - Stylish, responsive design
-- Particle background effect
 - Separate "About Me" section
 - Clear and accessible contact information
 - Project showcase section
