@@ -1,0 +1,140 @@
+/* style.css */
+
+/* Base styles for the body and overall layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #6DD5ED, #2193B0); /* Blue gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Styles for the main container of the application */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    padding: 40px;
+    max-width: 500px;
+    width: 90%; /* Responsive width */
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 2rem; /* Spacing between sections */
+}
+
+/* Keyframe animation for a smooth fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styles for input fields and select dropdowns */
+input[type="number"], select {
+    border: 2px solid #D1D5DB; /* Light gray border */
+    border-radius: 12px;
+    padding: 12px 15px;
+    transition: all 0.3s ease; /* Smooth transition for focus effects */
+    width: 100%; /* Make inputs take full width of their container */
+}
+
+/* Focus styles for input fields and select dropdowns */
+input[type="number"]:focus, select:focus {
+    border-color: #2193B0; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.3); /* Blue shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Styles for the conversion button */
+button {
+    background: linear-gradient(45deg, #FF6B6B, #F8CD4F); /* Red-orange gradient button */
+    color: white;
+    font-weight: 600;
+    padding: 14px 25px;
+    border-radius: 12px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Indicate clickable element */
+    width: 100%; /* Default to full width for mobile */
+}
+
+/* Hover effect for the button */
+button:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Styles for the result display area */
+#result {
+    background-color: #E2E8F0; /* Light gray background for result */
+    border-radius: 12px;
+    padding: 15px 20px;
+    min-height: 60px; /* Ensure consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Larger font size */
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    overflow-wrap: break-word; /* Ensure text wraps */
+    width: 100%; /* Take full width */
+}
+
+/* Styles for label text */
+label {
+    display: block; /* Make labels block-level elements */
+    color: #4A5568; /* Darker gray text */
+    font-size: 0.875rem; /* Small text size */
+    font-weight: 500; /* Medium font weight */
+    margin-bottom: 0.5rem; /* Space below label */
+}
+
+/* Flexbox setup for input and output sections */
+.input-section, .output-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between input groups */
+    align-items: center; /* Center items within sections */
+}
+
+/* Input group styling */
+.input-group {
+    flex: 1; /* Allow groups to take available space */
+    width: 100%; /* Ensure full width within flex item */
+}
+
+/* Mobile responsiveness: Apply styles for screens up to 640px wide */
+@media (max-width: 640px) {
+    .container {
+        padding: 30px 20px; /* Adjust padding for smaller screens */
+    }
+    input[type="number"], select, button {
+        padding: 10px 12px; /* Adjust padding for inputs/buttons */
+        font-size: 0.9rem; /* Smaller font size for inputs/buttons */
+    }
+    #result {
+        font-size: 1.2rem; /* Smaller font size for result */
+    }
+}
+
+/* Tablet and larger responsiveness: Apply styles for screens 640px and wider */
+@media (min-width: 641px) {
+    .input-section, .output-section {
+        flex-direction: row; /* Arrange items in a row */
+        gap: 1rem; /* Consistent spacing */
+    }
+    .output-section button {
+        width: auto; /* Button can shrink on larger screens */
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-top: auto; /* Align button to bottom if input group is taller */
+    }
+}
