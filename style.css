@@ -1,0 +1,373 @@
+/* General Body and Container Styles */
+:root {
+    /* Define a vibrant color palette (Bluish-Pink Theme) */
+    --primary-dark-blue: #2c3e50; /* Deep blue, for strong contrast */
+    --accent-bluish-pink: #da70d6; /* Orchid - The main vibrant bluish-pink accent */
+    --secondary-highlight-blue: #00bcd4; /* A vibrant cyan/sky blue for secondary highlights */
+    --light-background-color: #ecf0f1; /* Light grey-blue */
+    --text-dark: #34495e; /* Dark grey-blue for main text */
+    --white: #ffffff;
+    --light-shadow: rgba(0, 0, 0, 0.15);
+    --strong-shadow: rgba(0, 0, 0, 0.3);
+    --name-color: #1a2a6c; /* New: Dark blue specifically for the name */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-background-color);
+    color: var(--text-dark);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+/* Header Section */
+.header {
+    /* Updated gradient to use the new bluish-pink and secondary blue */
+    background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--accent-bluish-pink) 50%, var(--secondary-highlight-blue) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 70px 20px;
+    border-bottom: 10px solid var(--secondary-highlight-blue); /* Bold bottom border with secondary blue */
+    box-shadow: 0 8px 20px var(--strong-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.header-content h1 {
+    margin: 15px 0 8px;
+    font-size: 3.5em;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px var(--strong-shadow);
+    animation: fadeInDown 1s ease-out;
+    color: var(--name-color); /* Apply the new dark blue color to the name */
+}
+
+/* Style for "Hi, I'm" message */
+.header-content h1 .hi-message {
+    color: var(--white); /* Ensure "Hi, I'm" is white */
+    margin-right: 5px; /* Small space between "Hi, I'm" and name */
+    /* Font size and family are inherited from h1 */
+}
+
+.header-content p {
+    font-size: 1.4em;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    animation: fadeInUp 1s ease-out;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid var(--white);
+    object-fit: cover;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px var(--strong-shadow);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    animation: zoomIn 1s ease-out;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Styling */
+.section {
+    background-color: var(--white);
+    padding: 50px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px var(--light-shadow);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    color: var(--primary-dark-blue);
+    /* Updated border-bottom color to the new accent */
+    border-bottom: 4px solid var(--accent-bluish-pink);
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-tag {
+    /* Updated background-color to the new accent */
+    background-color: var(--accent-bluish-pink);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.skill-tag:hover {
+    /* Updated hover background-color to secondary accent */
+    background-color: var(--secondary-highlight-blue);
+    color: var(--primary-dark-blue);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-dark-blue);
+    cursor: pointer;
+}
+
+/* Projects Section */
+.project-card {
+    background-color: var(--light-background-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 8px solid var(--primary-dark-blue);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(5px);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    /* Updated color to the new accent */
+    color: var(--accent-bluish-pink);
+    font-size: 1.6em;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Contact Section */
+.contact p {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+/* Style for contact information labels */
+.contact-label {
+    font-weight: 600; /* Make labels bold */
+    color: var(--text-dark); /* Ensure label color is consistent */
+}
+
+.contact a {
+    /* Updated color to the new accent */
+    color: var(--accent-bluish-pink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--primary-dark-blue);
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.social-links a {
+    display: inline-block;
+    background-color: var(--primary-dark-blue);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.social-links a:hover {
+    /* Updated hover background-color to the new accent */
+    background-color: var(--accent-bluish-pink);
+    color: var(--primary-dark-blue); /* Changed text color for better contrast on pink */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--primary-dark-blue);
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    font-size: 1em;
+    box-shadow: 0 -5px 15px var(--strong-shadow);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header-content h1 {
+        font-size: 2.8em;
+    }
+
+    .header-content p {
+        font-size: 1.2em;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        border: 6px solid var(--white);
+    }
+
+    .section {
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .skill-tag {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .project-card h3 {
+        font-size: 1.3em;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header {
+        padding: 50px 10px;
+        border-bottom-width: 6px;
+    }
+
+    .header-content h1 {
+        font-size: 2.2em;
+    }
+
+    .header-content p {
+        font-size: 1em;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+        border: 5px solid var(--white);
+    }
+
+    .section {
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .skill-tag {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        border-radius: 25px;
+    }
+
+    .project-card {
+        padding: 20px;
+        border-left-width: 6px;
+    }
+
+    .project-card h3 {
+        font-size: 1.1em;
+    }
+
+    .social-links a {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
